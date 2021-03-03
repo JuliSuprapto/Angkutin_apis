@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use('/access', require('./routes/access'))
+app.use('/pesan', require('./routes/pesan'))
 app.use('/profilephoto', express.static(path.join(__dirname, 'img')))
 
 app.listen(port, function() {

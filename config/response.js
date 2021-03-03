@@ -3,6 +3,10 @@ module.exports = {
         error : true,
         msg : "Terjadi kesalahan pada server"
     },
+    commonNoData : {
+        error : true,
+        msg : "Tidak Ada Data!"
+    },
     commonErrorMsg : (msg) => {
         return {
             error : true,
