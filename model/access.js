@@ -29,6 +29,9 @@ const userSchema = mongoose.Schema({
     },
     plat : {
         type : String
+    }, 
+    status : {
+        type : String
     }
 })
 

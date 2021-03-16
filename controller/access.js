@@ -158,6 +158,25 @@ exports.updateDataDriver = (id, data, profilephoto) =>
         })
     })
 
+exports.updateDataStatus = (id, data) =>
+    new Promise(async (resolve, reject) => {
+        console.log(data)
+        accessModel.updateOne(
+            {_id : ObjectId(id)}, {
+                status : data.status
+            }
+            ).then(() => {
+                accessModel.findOne({ _id: ObjectId(id) })
+                .then(result => {
+                    resolve(requestResponse(result))
+                })
+             
+        }).catch(err => {
+            console.log(err)
+            reject(response.commonErrorMsg('Opps... terjadi kesalahan pada server.'))
+        })
+    })
+
 exports.getDataUser = () =>
     new Promise(async (resolve, reject)=>{
         await accessModel.find()

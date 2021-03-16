@@ -62,6 +62,12 @@ router.put("/updateUser/:id", uploadUsers, (req, res) => {
         .catch((err) => res.json(err))
 })
 
+router.put("/updateStatus/:id", (req, res) => {
+    accessController.updateDataStatus(req.params.id, req.body)
+        .then((result) => res.json(result))
+        .catch((err) => res.json(err))
+})
+
 router.put("/completeDriver/:id", uploadDriver, (req, res) => {
     accessController.lengkapiDataDriver(req.params.id, req.body, req.file.filename)
         .then((result) => res.json(result))
