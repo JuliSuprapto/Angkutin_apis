@@ -99,11 +99,11 @@ exports.getDataPesanan = () =>
         })
     })
 
-exports.getDataPesananDriver = (idDriver) =>
+exports.getDataPesananDriver = (id) =>
     new Promise(async (resolve, reject)=>{
         await accessPesan.find({
-            // _id: ObjectId(id)
-            idDriver : idDriver
+            _id: ObjectId(id)
+            // idDriver : idDriver
         })
             .then(r =>{
                 console.log(r[0])
@@ -119,11 +119,11 @@ exports.getDataPesananDriver = (idDriver) =>
             })
     })
 
-exports.getDataPesananUser = (idUser) =>
+exports.getDataPesananUser = (id) =>
     new Promise(async (resolve, reject)=>{
         await accessPesan.findOne({
-            // _id: ObjectId(id)
-            idUser : idUser
+            _id: ObjectId(id)
+            // idUser : idUser
         })
             .then(r =>{
                 console.log(r[0])
